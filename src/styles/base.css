@@ -1,0 +1,297 @@
+/* =============================================================================
+   Base Styles — Green Vista
+   CSS reset, global element styles, accessibility utilities, and global buttons.
+   Font imports are handled in main.js via @fontsource package imports.
+   ============================================================================= */
+
+/* ---------------------------------------------------------------------------
+   Box model reset
+   --------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Document
+   --------------------------------------------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  color: var(--char);
+  background-color: var(--off);
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* ---------------------------------------------------------------------------
+   Focus styles
+   Visible for keyboard users; hidden for mouse/pointer users.
+   --------------------------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--gold-lt);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Remove default focus ring for mouse interactions only */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Skip to main content link (accessibility)
+   --------------------------------------------------------------------------- */
+
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 1rem;
+  z-index: calc(var(--z-toast) + 10);
+  padding: 0.75rem 1.5rem;
+  background-color: var(--forest-deep);
+  color: var(--off);
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  white-space: nowrap;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Container utility
+   --------------------------------------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+/* ---------------------------------------------------------------------------
+   Typography
+   --------------------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: var(--leading-tight);
+  color: inherit;
+}
+
+p {
+  max-width: 68ch;
+  line-height: var(--leading-normal);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+/* ---------------------------------------------------------------------------
+   Media
+   --------------------------------------------------------------------------- */
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Images with explicit dimensions should not shrink below their natural size */
+img[width][height] {
+  height: auto; /* Preserve intrinsic ratio while respecting width constraint */
+}
+
+/* ---------------------------------------------------------------------------
+   Lists
+   --------------------------------------------------------------------------- */
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Form elements
+   --------------------------------------------------------------------------- */
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-sans);
+  font-size: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
+  font-size: inherit;
+  color: inherit;
+}
+
+/* ---------------------------------------------------------------------------
+   Visually hidden (screen reader only)
+   --------------------------------------------------------------------------- */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Build-phase section placeholders
+   Replaced section by section. Clearly labelled — never mistaken for real content.
+   --------------------------------------------------------------------------- */
+
+.section-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  background: linear-gradient(
+    135deg,
+    var(--forest) 0%,
+    var(--olive) 100%
+  );
+  color: var(--off);
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.hero-placeholder {
+  min-height: 100svh;
+}
+
+.placeholder-inner {
+  padding: var(--space-8);
+}
+
+.placeholder-label {
+  font-family: var(--font-serif);
+  font-size: var(--text-project);
+  font-weight: 500;
+  margin-bottom: var(--space-3);
+  opacity: 0.85;
+  max-width: none;
+}
+
+.placeholder-note {
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  opacity: 0.45;
+  font-style: italic;
+  max-width: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Global button styles
+   --------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;       /* 14 px */
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-sm);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base),
+    opacity var(--transition-base);
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+  line-height: 1;
+}
+
+/* Primary CTA — gold on dark
+   Contrast: --gold-lt (#c9a76a) on --forest-deep (#0e1712) ≈ 7.8:1 ✓ AA */
+.btn-primary {
+  background-color: var(--gold-lt);
+  color: var(--forest-deep);
+  border-color: var(--gold-lt);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--sand);
+  border-color: var(--sand);
+  color: var(--forest-deep);
+}
+
+/* Secondary outline button — for use on dark sections */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--off);
+  border-color: rgba(246, 241, 231, 0.55);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background-color: rgba(246, 241, 231, 0.1);
+  border-color: var(--off);
+  color: var(--off);
+}

@@ -1,0 +1,357 @@
+/* =============================================================================
+   Header & Navigation — Green Vista
+   Fixed header: transparent over hero, --forest-deep after scroll.
+   Mobile hamburger with accessible toggle.
+   ============================================================================= */
+
+/* ---------------------------------------------------------------------------
+   Header shell
+   --------------------------------------------------------------------------- */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  z-index: var(--z-header);
+  background-color: transparent;
+  transition:
+    background-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+/* State: page has been scrolled past threshold */
+.site-header.is-scrolled {
+  background-color: var(--forest-deep);
+  box-shadow: 0 1px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* State: mobile menu is open — background needed even at scroll position 0 */
+.site-header.nav-open {
+  background-color: var(--forest-deep);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  height: 4.5rem; /* 72 px */
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+/* ---------------------------------------------------------------------------
+   Logo
+   --------------------------------------------------------------------------- */
+
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: var(--off);
+}
+
+/*
+  Typographic wordmark — placeholder until official logo asset is supplied.
+
+  To replace with an image logo:
+    1. Add file to /assets/raw/ and run `npm run images`
+    2. In index.html swap <span class="logo-wordmark"> with:
+         <img class="logo-img" src="/images/logo-emblem-640.webp" alt="Green Vista"
+              width="140" height="40" />
+    3. This CSS block (.logo-wordmark) can then be removed.
+*/
+.logo-wordmark {
+  font-family: var(--font-serif);
+  font-size: 1.375rem; /* 22 px */
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  color: var(--off);
+  line-height: 1;
+  user-select: none;
+}
+
+/* Image logo — sized to match the header height */
+.logo-img {
+  height: 2.25rem; /* 36 px — adjust to match actual logo proportions */
+  width: auto;
+  display: block;
+}
+
+/* ---------------------------------------------------------------------------
+   Primary navigation (desktop)
+   --------------------------------------------------------------------------- */
+
+.main-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.875rem; /* 14 px */
+  font-weight: 500;
+  color: var(--off);
+  text-decoration: none;
+  letter-spacing: 0.015em;
+  padding-block: var(--space-2);
+  opacity: 0.8;
+  position: relative;
+  transition: opacity var(--transition-fast);
+}
+
+/* Animated underline on hover / focus */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--gold-lt);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--transition-base);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  opacity: 1;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* ---------------------------------------------------------------------------
+   Header actions: desktop CTA + hamburger button
+   --------------------------------------------------------------------------- */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/*
+  Consultation CTA button (header)
+  --gold-lt (#c9a76a) on --forest-deep (#0e1712): contrast ≈ 7.8:1 ✓ WCAG AA
+*/
+.btn-consultation {
+  background-color: var(--gold-lt);
+  color: var(--forest-deep);
+  border: 1px solid var(--gold-lt);
+  font-size: 0.8125rem; /* 13 px */
+  font-weight: 500;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.015em;
+  text-decoration: none;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.btn-consultation:hover,
+.btn-consultation:focus-visible {
+  background-color: var(--sand);
+  border-color: var(--sand);
+  color: var(--forest-deep);
+}
+
+/* ---------------------------------------------------------------------------
+   Hamburger toggle button
+   --------------------------------------------------------------------------- */
+
+.nav-toggle {
+  display: none; /* shown via media query on narrow viewports */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 2.5rem;   /* 40 px touch target */
+  height: 2.5rem;
+  padding: 0.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background-color: var(--off);
+  border-radius: 1px;
+  transform-origin: center;
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base),
+    width var(--transition-base);
+}
+
+/* Animate bars into an × when the nav is open */
+.site-header.nav-open .nav-toggle .nav-toggle-bar:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.site-header.nav-open .nav-toggle .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+
+.site-header.nav-open .nav-toggle .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ---------------------------------------------------------------------------
+   Mobile CTA inside nav list — hidden on desktop
+   --------------------------------------------------------------------------- */
+
+.nav-list-cta {
+  display: none;
+}
+
+.nav-cta-mobile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 1.5rem;
+  background-color: var(--gold-lt);
+  color: var(--forest-deep);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  text-decoration: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  letter-spacing: 0.015em;
+}
+
+.nav-cta-mobile:hover,
+.nav-cta-mobile:focus-visible {
+  background-color: var(--sand);
+  color: var(--forest-deep);
+}
+
+/* =============================================================================
+   MOBILE NAVIGATION  (< 960 px)
+   ============================================================================= */
+
+@media (max-width: 59.9375rem) {
+
+  /* Show hamburger */
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Hide desktop CTA — mobile users get the button inside the nav */
+  .btn-consultation {
+    display: none;
+  }
+
+  /* Nav panel: hidden by default, shown when .nav-open is on the header */
+  .main-nav {
+    display: none;
+    position: fixed;
+    top: 4.5rem; /* align to bottom of header */
+    inset-inline: 0;
+    background-color: var(--forest-deep);
+    padding: var(--space-4) var(--container-pad) var(--space-10);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    overflow-y: auto;
+    max-height: calc(100svh - 4.5rem);
+    /* Prevent layout shift when scrollbar appears */
+    overscroll-behavior: contain;
+  }
+
+  .site-header.nav-open .main-nav {
+    display: block;
+  }
+
+  /* Stack links vertically */
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav-list li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .nav-link {
+    display: block;
+    padding: var(--space-5) 0;
+    font-size: 1.25rem;           /* larger tap target */
+    font-family: var(--font-serif);
+    font-weight: 500;
+    opacity: 1;
+    letter-spacing: 0;
+  }
+
+  /* Remove the animated underline — not useful in vertical list */
+  .nav-link::after {
+    display: none;
+  }
+
+  /* Show mobile CTA */
+  .nav-list-cta {
+    display: block;
+    border-bottom: none;
+    padding-top: var(--space-8);
+  }
+}
+
+/* =============================================================================
+   DESKTOP NAVIGATION  (≥ 960 px)
+   ============================================================================= */
+
+@media (min-width: 60rem) {
+
+  /* Ensure nav is always visible on desktop regardless of class state */
+  .main-nav {
+    display: flex !important;
+    position: static;
+    background: none;
+    padding: 0;
+    border: none;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .nav-list {
+    flex-direction: row;
+  }
+
+  .nav-list li {
+    border: none;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-list-cta {
+    display: none;
+  }
+
+  .btn-consultation {
+    display: inline-flex;
+  }
+}

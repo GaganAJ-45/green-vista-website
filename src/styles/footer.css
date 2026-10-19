@@ -1,0 +1,123 @@
+/* =============================================================================
+   Footer — Green Vista
+   ============================================================================= */
+
+.site-footer {
+  background-color: var(--forest-deep);
+  color: var(--off);
+  padding-block: clamp(3.5rem, 7vw, 5.5rem) var(--space-8);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(8rem, 0.7fr) minmax(14rem, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 31rem;
+}
+
+.footer-logo-text {
+  display: block;
+  color: var(--off);
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.35rem);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  line-height: 1;
+}
+
+.footer-tagline {
+  color: var(--gold-lt);
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
+
+.footer-description {
+  max-width: 44ch;
+  color: var(--sand);
+  font-size: var(--text-small);
+  line-height: var(--leading-normal);
+}
+
+.footer-heading {
+  margin-bottom: var(--space-3);
+  color: var(--gold-lt);
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
+
+.footer-link-list,
+.footer-contact-list {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.footer-contact-list {
+  color: var(--sand);
+  font-size: var(--text-small);
+  font-style: normal;
+}
+
+.footer-contact-list a,
+.footer-link-list a {
+  color: var(--off);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.footer-link-list a { display: inline-block; padding-block: 0.12rem; }
+
+.footer-contact-list a:hover,
+.footer-link-list a:hover { color: var(--gold-lt); }
+
+.footer-link-list a:focus-visible,
+.footer-contact-list a:focus-visible {
+  outline: 2px solid var(--gold-lt);
+  outline-offset: 3px;
+}
+
+.footer-bottom {
+  padding-top: var(--space-5);
+  border-top: 1px solid rgba(246, 241, 231, 0.2);
+}
+
+.footer-copy {
+  max-width: none;
+  color: var(--sand);
+  font-size: var(--text-label);
+}
+
+@media (max-width: 58rem) {
+  .footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-6) var(--space-8);
+  }
+
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 40rem) {
+  .site-footer { padding-block: var(--space-12) var(--space-6); }
+  .footer-inner { gap: var(--space-6); }
+  .footer-main { grid-template-columns: 1fr; gap: var(--space-6); }
+  .footer-brand { grid-column: auto; }
+  .footer-link-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-4); }
+  .footer-link-list a { padding-block: var(--space-2); }
+  .footer-copy { padding-right: 4.5rem; line-height: var(--leading-snug); }
+}

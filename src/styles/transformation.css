@@ -1,0 +1,186 @@
+/* =============================================================================
+   Transformation Section — Green Vista
+   ============================================================================= */
+
+.transformation-section {
+  padding-block: clamp(var(--space-8), 5vw, var(--space-16));
+  background: var(--sand-lt);
+  color: var(--forest);
+}
+
+.transformation-header {
+  margin: 0 auto var(--space-4);
+  text-align: center;
+}
+
+.transformation-eyebrow {
+  max-width: none;
+  margin-bottom: var(--space-1);
+  color: var(--forest);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
+
+.transformation-heading {
+  max-width: none;
+  margin-inline: auto;
+  color: var(--forest-deep);
+  font-size: clamp(1.75rem, 3.2vw, 3rem);
+  text-wrap: balance;
+}
+
+.transformation-instruction {
+  max-width: 52ch;
+  margin: var(--space-2) auto 0;
+  color: var(--char);
+  font-size: var(--text-small);
+}
+
+.transformation-compare {
+  --comparison-position: 50%;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 70rem;
+  aspect-ratio: 4 / 3;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--forest);
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.transformation-after-image,
+.transformation-before-image,
+.transformation-after-image img,
+.transformation-before-image picture,
+.transformation-before-image img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.transformation-after-image img,
+.transformation-before-image img {
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+.transformation-after-image img[width][height],
+.transformation-before-image img[width][height] {
+  height: 100%;
+}
+
+.transformation-before-image {
+  clip-path: inset(0 calc(100% - var(--comparison-position)) 0 0);
+  pointer-events: none;
+}
+
+.transformation-label {
+  position: absolute;
+  z-index: 1;
+  top: var(--space-4);
+  padding: 0.45rem 0.8rem;
+  background: rgba(14, 23, 18, 0.86);
+  color: var(--off);
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  line-height: 1.2;
+  pointer-events: none;
+}
+
+.transformation-label-before {
+  left: var(--space-4);
+}
+
+.transformation-label-after {
+  right: var(--space-4);
+}
+
+.transformation-handle {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: var(--comparison-position);
+  display: grid;
+  width: 48px;
+  padding: 0;
+  place-items: center;
+  transform: translateX(-50%);
+  color: var(--forest-deep);
+  cursor: ew-resize;
+  touch-action: pan-y;
+}
+
+.transformation-handle::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: var(--off);
+  box-shadow: 0 0 0 1px rgba(14, 23, 18, 0.5);
+  content: "";
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.transformation-handle > span {
+  position: relative;
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 2px solid var(--off);
+  border-radius: 50%;
+  background: var(--forest-deep);
+  color: var(--off);
+  font-size: 1.4rem;
+  line-height: 1;
+  box-shadow: 0 2px 12px rgba(14, 23, 18, 0.28);
+  pointer-events: none;
+}
+
+.transformation-handle:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (max-width: 40rem) {
+  .transformation-section {
+    padding-block: var(--space-8);
+  }
+
+  .transformation-header {
+    margin-bottom: var(--space-3);
+  }
+
+  .transformation-label {
+    top: var(--space-3);
+    padding: 0.35rem 0.65rem;
+  }
+
+  .transformation-label-before {
+    left: var(--space-3);
+  }
+
+  .transformation-label-after {
+    right: var(--space-3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transformation-handle,
+  .transformation-before-image {
+    transition: none;
+  }
+}

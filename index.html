@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Green Vista - Landscape Design Studio, Bangalore</title>
+  <meta name="description" content="Bespoke landscape design, garden development and outdoor living spaces crafted for modern Bangalore homes and businesses." />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Green Vista - Landscape Design Studio, Bangalore" />
+  <meta property="og:description" content="Bespoke landscape design, garden development and outdoor living spaces crafted for modern Bangalore homes and businesses." />
+  <!-- og:url   — TODO: add when production domain is confirmed -->
+  <!-- og:image — TODO: add when production domain is confirmed -->
+
+  <!-- Canonical URL — TODO: add when production domain is confirmed -->
+
+  <!-- LocalBusiness structured data (verified information only) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Green Vista",
+    "description": "Bespoke landscape design, garden development and outdoor living spaces crafted for modern Bangalore homes and businesses.",
+    "telephone": "+918277788033",
+    "email": "punithgsp@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bidarahalli",
+      "addressLocality": "Bengaluru",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+
+  <!-- Skip to main content (accessibility) -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- =====================================================================
+       SITE HEADER
+       ===================================================================== -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="header-inner">
+
+      <!--
+        LOGO — typographic placeholder.
+        To replace with an official logo asset when available:
+          1. Place the file at /assets/raw/logo-emblem.svg (or .png)
+          2. Run `npm run images`
+          3. In index.html, replace the <span class="logo-wordmark"> element with:
+               <img class="logo-img" src="/images/logo-emblem.webp"
+                    srcset="/images/logo-emblem-640.webp 640w"
+                    alt="Green Vista" width="140" height="40" />
+          4. The .logo-wordmark CSS block in header.css can then be removed.
+      -->
+      <a class="site-logo" href="/" aria-label="Green Vista — Home">
+        <span class="logo-wordmark" aria-hidden="true">Green Vista</span>
+      </a>
+
+      <!-- Primary navigation -->
+      <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
+        <ul class="nav-list" role="list">
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#process">Process</a></li>
+          <li><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+          <!-- Mobile-only CTA — hidden on desktop via CSS -->
+          <li class="nav-list-cta" aria-hidden="true">
+            <a class="btn btn-consultation nav-cta-mobile" href="#contact">
+              Get a Consultation
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Desktop CTA — hidden on mobile via CSS -->
+        <a class="btn btn-consultation" href="#contact">Get a Consultation</a>
+
+        <!-- Mobile hamburger -->
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+  <!-- /SITE HEADER -->
+
+  <!-- =====================================================================
+       MAIN CONTENT
+       ===================================================================== -->
+  <main id="main-content">
+
+    <!--
+      Hero section — Phase 1: Three-photograph crossfade slideshow
+    -->
+    <section
+      class="hero-section"
+      id="hero"
+      aria-roledescription="carousel"
+      aria-label="Landscape design showcase"
+    >
+      <!-- Background Slideshow Layers -->
+      <div class="hero-slides-wrapper" aria-live="off">
+        <!-- Slide 1: Villa Garden -->
+        <div
+          class="hero-slide is-active"
+          data-slide="0"
+          role="group"
+          aria-roledescription="slide"
+          aria-label="1 of 3: Villa Landscaping (Residential garden)"
+          aria-hidden="false"
+        >
+          <picture class="hero-slide-picture">
+            <source
+              media="(max-width: 48rem)"
+              type="image/avif"
+              srcset="/images/hero-mobile-1-452.avif"
+            />
+            <source
+              media="(max-width: 48rem)"
+              type="image/webp"
+              srcset="/images/hero-mobile-1-452.webp"
+            />
+            <source
+              type="image/avif"
+              srcset="/images/hero-villa-garden-640.avif 640w,
+                      /images/hero-villa-garden-1024.avif 1024w,
+                      /images/hero-villa-garden-1600.avif 1600w"
+              sizes="100vw"
+            />
+            <img
+              class="hero-slide-img"
+              src="/images/hero-villa-garden-1600.webp"
+              srcset="/images/hero-villa-garden-640.webp 640w,
+                      /images/hero-villa-garden-1024.webp 1024w,
+                      /images/hero-villa-garden-1600.webp 1600w"
+              sizes="100vw"
+              alt="Lush tropical garden with palms, stone pathway, and swimming pool"
+              width="1600"
+              height="900"
+              fetchpriority="high"
+            />
+          </picture>
+        </div>
+
+        <!-- Slide 2: Modern Villa -->
+        <div
+          class="hero-slide"
+          data-slide="1"
+          role="group"
+          aria-roledescription="slide"
+          aria-label="2 of 3: Outdoor living (Designed for everyday use)"
+          aria-hidden="true"
+        >
+          <picture class="hero-slide-picture">
+            <source
+              media="(max-width: 48rem)"
+              type="image/avif"
+              srcset="/images/hero-mobile-2-452.avif"
+            />
+            <source
+              media="(max-width: 48rem)"
+              type="image/webp"
+              srcset="/images/hero-mobile-2-452.webp"
+            />
+            <source
+              type="image/avif"
+              srcset="/images/hero-modern-villa-640.avif 640w,
+                      /images/hero-modern-villa-1024.avif 1024w,
+                      /images/hero-modern-villa-1600.avif 1600w"
+              sizes="100vw"
+            />
+            <img
+              class="hero-slide-img"
+              src="/images/hero-modern-villa-1600.webp"
+              srcset="/images/hero-modern-villa-640.webp 640w,
+                      /images/hero-modern-villa-1024.webp 1024w,
+                      /images/hero-modern-villa-1600.webp 1600w"
+              sizes="100vw"
+              alt="Contemporary villa with swimming pool, greenery, and outdoor living space"
+              width="1600"
+              height="900"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+
+        <!-- Slide 3: Evening Living -->
+        <div
+          class="hero-slide"
+          data-slide="2"
+          role="group"
+          aria-roledescription="slide"
+          aria-label="3 of 3: Evening outdoor living (Featured transformation)"
+          aria-hidden="true"
+        >
+          <picture class="hero-slide-picture">
+            <source
+              media="(max-width: 48rem)"
+              type="image/avif"
+              srcset="/images/hero-mobile-3-453.avif"
+            />
+            <source
+              media="(max-width: 48rem)"
+              type="image/webp"
+              srcset="/images/hero-mobile-3-453.webp"
+            />
+            <source
+              type="image/avif"
+              srcset="/images/hero-evening-living-640.avif 640w,
+                      /images/hero-evening-living-1024.avif 1024w,
+                      /images/hero-evening-living-1600.avif 1600w"
+              sizes="100vw"
+            />
+            <img
+              class="hero-slide-img"
+              src="/images/hero-evening-living-1600.webp"
+              srcset="/images/hero-evening-living-640.webp 640w,
+                      /images/hero-evening-living-1024.webp 1024w,
+                      /images/hero-evening-living-1600.webp 1600w"
+              sizes="100vw"
+              alt="Luxury landscaped garden at blue hour with warm architectural lighting and outdoor seating"
+              width="1600"
+              height="900"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+      </div>
+
+      <!-- Restrained Dark Gradient Overlay -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <!-- Foreground Content -->
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-main">
+            <p class="hero-eyebrow">Landscape Design Studio &mdash; Bangalore</p>
+            <div class="hero-headline-stack" aria-live="polite">
+              <h1 class="hero-headline is-active" data-headline="0" aria-hidden="false">
+                Where nature feels like luxury.
+              </h1>
+              <h1 class="hero-headline" data-headline="1" aria-hidden="true">
+                Where nature feels like luxury.
+              </h1>
+              <h1 class="hero-headline" data-headline="2" aria-hidden="true">
+                Where nature feels like luxury.
+              </h1>
+            </div>
+            <p class="hero-description">
+              Thoughtfully designed gardens and outdoor spaces across Bangalore.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn hero-btn-primary" href="#projects">Explore Our Work</a>
+              <a class="btn hero-btn-secondary" href="#contact">Book a Consultation</a>
+            </div>
+
+          </div>
+
+          <!-- Lower Bar: Service Highlights & Slideshow Controls -->
+          <div class="hero-footer">
+            <ul class="hero-highlights" role="list">
+              <li class="hero-highlight-item">
+                <span class="hero-highlight-dot" aria-hidden="true"></span>
+                <span>Villa gardens</span>
+              </li>
+              <li class="hero-highlight-item">
+                <span class="hero-highlight-dot" aria-hidden="true"></span>
+                <span>Terrace design</span>
+              </li>
+              <li class="hero-highlight-item">
+                <span class="hero-highlight-dot" aria-hidden="true"></span>
+                <span>Outdoor living</span>
+              </li>
+              <li class="hero-highlight-item">
+                <span class="hero-highlight-dot" aria-hidden="true"></span>
+                <span>Commercial landscapes</span>
+              </li>
+            </ul>
+
+            <div class="hero-controls-wrap">
+              <div
+                class="hero-controls"
+                role="group"
+                aria-label="Slideshow controls"
+              >
+                <div class="hero-indicators" role="tablist" aria-label="Slide selector">
+                  <button
+                    class="hero-indicator-btn is-active"
+                    type="button"
+                    role="tab"
+                    id="hero-indicator-0"
+                    aria-label="Slide 1: Villa Landscaping"
+                    aria-selected="true"
+                    aria-controls="hero"
+                  >
+                    <span class="hero-indicator-pill" aria-hidden="true"></span>
+                  </button>
+                  <button
+                    class="hero-indicator-btn"
+                    type="button"
+                    role="tab"
+                    id="hero-indicator-1"
+                    aria-label="Slide 2: Modern Villa"
+                    aria-selected="false"
+                    aria-controls="hero"
+                  >
+                    <span class="hero-indicator-pill" aria-hidden="true"></span>
+                  </button>
+                  <button
+                    class="hero-indicator-btn"
+                    type="button"
+                    role="tab"
+                    id="hero-indicator-2"
+                    aria-label="Slide 3: Evening Living"
+                    aria-selected="false"
+                    aria-controls="hero"
+                  >
+                    <span class="hero-indicator-pill" aria-hidden="true"></span>
+                  </button>
+                </div>
+
+                <button
+                  class="hero-pause-btn"
+                  id="hero-pause-toggle"
+                  type="button"
+                  aria-label="Pause automatic slideshow"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="6" y="4" width="4" height="16"/>
+                    <rect x="14" y="4" width="4" height="16"/>
+                  </svg>
+                </button>
+              </div>
+              <p class="hero-caption" id="hero-active-caption" aria-live="polite">Villa Landscaping (Residential garden)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      Sections 2–8 placeholders.
+      Each will be replaced in its corresponding build phase.
+      IDs are set now so anchor navigation works throughout the build.
+    -->
+
+    <!-- =====================================================================
+         Phase 2: Introduction Section
+         ===================================================================== -->
+    <section class="intro-section" id="about" aria-labelledby="intro-heading">
+      <div class="container">
+        <!-- Editorial introduction and principles -->
+        <div class="intro-header-grid">
+          <div class="intro-title-col">
+            <span class="intro-eyebrow">OUR PHILOSOPHY</span>
+            <h2 class="intro-heading" id="intro-heading">
+              Thoughtful landscapes. Beautifully built.
+            </h2>
+            <p class="intro-lead">
+              Green Vista designs and builds outdoor spaces across Bangalore, from villa gardens to commercial landscapes.
+            </p>
+          </div>
+
+          <div class="intro-principles-col">
+            <div class="intro-strengths-grid">
+              <article class="intro-strength-item">
+                <span class="intro-strength-num" aria-hidden="true">01</span>
+                <h3 class="intro-strength-title">Concept to care</h3>
+                <p class="intro-strength-desc">
+                  Design, execution and maintenance in one place.
+                </p>
+              </article>
+
+              <article class="intro-strength-item">
+                <span class="intro-strength-num" aria-hidden="true">02</span>
+                <h3 class="intro-strength-title">Made for Bangalore</h3>
+                <p class="intro-strength-desc">
+                  Plants and materials suited to the local climate.
+                </p>
+              </article>
+
+              <article class="intro-strength-item">
+                <span class="intro-strength-num" aria-hidden="true">03</span>
+                <h3 class="intro-strength-title">Built for living</h3>
+                <p class="intro-strength-desc">
+                  Practical, beautiful, easy-to-maintain spaces.
+                </p>
+              </article>
+
+              <article class="intro-strength-item">
+                <span class="intro-strength-num" aria-hidden="true">04</span>
+                <h3 class="intro-strength-title">Attention to detail</h3>
+                <p class="intro-strength-desc">
+                  Quality finishes and thoughtful planting.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Phase 2: Selected Projects Section
+         ===================================================================== -->
+    <section class="projects-section" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <header class="projects-header">
+          <div class="projects-header-left">
+            <h2 class="projects-title" id="projects-heading">Landscapes we've created.</h2>
+          </div>
+        </header>
+
+        <div class="projects-list">
+          <!-- Project 1: Villa Garden (Whitefield) — Asymmetric Layout A: Left Landscape Image -->
+          <article class="project-item project-villa" aria-labelledby="project-1-title">
+            <div class="project-media">
+              <picture class="project-picture">
+                <source
+                  type="image/avif"
+                  srcset="/images/villa-garden-whitefield-640.avif 640w,
+                          /images/villa-garden-whitefield-1024.avif 1024w,
+                          /images/villa-garden-whitefield-1600.avif 1600w"
+                  sizes="(max-width: 64rem) 100vw, 55vw"
+                />
+                <img
+                  class="project-img"
+                  src="/images/villa-garden-whitefield-1024.webp"
+                  srcset="/images/villa-garden-whitefield-640.webp 640w,
+                          /images/villa-garden-whitefield-1024.webp 1024w,
+                          /images/villa-garden-whitefield-1600.webp 1600w"
+                  sizes="(max-width: 64rem) 100vw, 55vw"
+                  alt="Villa garden in Whitefield with natural stone pathway, lush planting and low-maintenance lawn"
+                  width="1600"
+                  height="1000"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-category">Villa Landscape</span>
+                <span class="project-meta-dot" aria-hidden="true"></span>
+                <span class="project-location">Bangalore</span>
+              </div>
+              <p class="project-name">Villa Garden (Whitefield)</p>
+              <h3 class="project-heading" id="project-1-title">
+                A garden for everyday living
+              </h3>
+              <p class="project-desc">
+                A Whitefield family villa redesigned with layered planting, a natural stone path, shaded seating and a low-maintenance lawn.
+              </p>
+            </div>
+          </article>
+
+          <!-- Project 2: Rooftop Terrace (Indiranagar) — Asymmetric Layout B: Right Image / Reversed -->
+          <article class="project-item project-rooftop" aria-labelledby="project-2-title">
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-category">Terrace Garden</span>
+                <span class="project-meta-dot" aria-hidden="true"></span>
+                <span class="project-location">Bangalore</span>
+              </div>
+              <p class="project-name">Rooftop Terrace (Indiranagar)</p>
+              <h3 class="project-heading" id="project-2-title">
+                An unused rooftop, now a green retreat
+              </h3>
+              <p class="project-desc">
+                A bare rooftop reworked with modular planters, timber decking, a compact pergola and drip irrigation.
+              </p>
+            </div>
+            <div class="project-media">
+              <picture class="project-picture">
+                <source
+                  type="image/avif"
+                  srcset="/images/rooftop-terrace-indiranagar-640.avif 640w,
+                          /images/rooftop-terrace-indiranagar-1024.avif 1024w,
+                          /images/rooftop-terrace-indiranagar-1600.avif 1600w"
+                  sizes="(max-width: 64rem) 100vw, 55vw"
+                />
+                <img
+                  class="project-img"
+                  src="/images/rooftop-terrace-indiranagar-1024.webp"
+                  srcset="/images/rooftop-terrace-indiranagar-640.webp 640w,
+                          /images/rooftop-terrace-indiranagar-1024.webp 1024w,
+                          /images/rooftop-terrace-indiranagar-1600.webp 1600w"
+                  sizes="(max-width: 64rem) 100vw, 55vw"
+                  alt="Rooftop terrace in Indiranagar featuring timber decking, modular planters, and compact pergola structure"
+                  width="1600"
+                  height="1100"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          </article>
+
+          <!-- Project 3: Office Campus (Outer Ring Road) — Asymmetric Layout C: Panoramic Wide Frame -->
+          <article class="project-item project-office" aria-labelledby="project-3-title">
+            <div class="project-media">
+              <picture class="project-picture">
+                <source
+                  type="image/avif"
+                  srcset="/images/hero-modern-villa-640.avif 640w,
+                          /images/hero-modern-villa-1024.avif 1024w,
+                          /images/hero-modern-villa-1600.avif 1600w"
+                  sizes="100vw"
+                />
+                <img
+                  class="project-img"
+                  src="/images/hero-modern-villa-1600.webp"
+                  srcset="/images/hero-modern-villa-640.webp 640w,
+                          /images/hero-modern-villa-1024.webp 1024w,
+                          /images/hero-modern-villa-1600.webp 1600w"
+                  sizes="100vw"
+                  alt="Contemporary villa with swimming pool, greenery, and outdoor living space"
+                  width="1150"
+                  height="768"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+            <div class="project-info">
+              <div class="project-info-heading">
+                <div class="project-meta">
+                  <span class="project-category">Commercial Landscape</span>
+                  <span class="project-meta-dot" aria-hidden="true"></span>
+                  <span class="project-location">Bangalore</span>
+                </div>
+                <p class="project-name">Office Campus (Outer Ring Road)</p>
+                <h3 class="project-heading" id="project-3-title">
+                  A greener, more welcoming campus
+                </h3>
+              </div>
+              <div class="project-info-body">
+                <p class="project-desc">
+                  Native, low-water planting softens campus walkways and break-out lawns while keeping maintenance practical year-round.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+        <a class="projects-list-cta" href="#contact">Discuss your project <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section id="transformation" class="transformation-section" aria-labelledby="transformation-heading">
+      <div class="container transformation-container">
+        <header class="transformation-header">
+          <p class="transformation-eyebrow">Before &amp; After</p>
+          <h2 class="transformation-heading" id="transformation-heading">See the difference, side by side.</h2>
+          <p class="transformation-instruction" id="transformation-instruction">Drag to compare the transformation.</p>
+        </header>
+
+        <div class="transformation-compare" role="group" aria-label="Before-and-after garden comparison">
+          <picture class="transformation-after-image">
+            <source type="image/avif" srcset="/images/after-640.avif 640w, /images/after-1024.avif 1024w, /images/after-1600.avif 1448w" sizes="(max-width: 40rem) calc(100vw - 2.5rem), (max-width: 80rem) calc(100vw - 5rem), 70rem" />
+            <img src="/images/after-1024.webp" srcset="/images/after-640.webp 640w, /images/after-1024.webp 1024w, /images/after-1600.webp 1448w" sizes="(max-width: 40rem) calc(100vw - 2.5rem), (max-width: 80rem) calc(100vw - 5rem), 70rem" alt="Completed courtyard garden with a central stepping-stone path, green lawn, layered planting, and warm pathway lights" width="1448" height="1086" loading="lazy" />
+          </picture>
+          <div class="transformation-before-image">
+            <picture>
+              <source type="image/avif" srcset="/images/before-640.avif 640w, /images/before-1024.avif 1024w, /images/before-1600.avif 1448w" sizes="(max-width: 40rem) calc(100vw - 2.5rem), (max-width: 80rem) calc(100vw - 5rem), 70rem" />
+              <img src="/images/before-1024.webp" srcset="/images/before-640.webp 640w, /images/before-1024.webp 1024w, /images/before-1600.webp 1448w" sizes="(max-width: 40rem) calc(100vw - 2.5rem), (max-width: 80rem) calc(100vw - 5rem), 70rem" alt="Unfinished courtyard garden with bare soil, sparse planting and scattered potted trees between buildings" width="1448" height="1086" loading="lazy" />
+            </picture>
+          </div>
+          <span class="transformation-label transformation-label-before" aria-hidden="true">Before</span>
+          <span class="transformation-label transformation-label-after" aria-hidden="true">After</span>
+          <button class="transformation-handle" type="button" role="slider" tabindex="0" aria-label="Before and after comparison" aria-describedby="transformation-instruction" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% Before, 50% After">
+            <span aria-hidden="true">↔</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="process-section" aria-labelledby="process-heading">
+      <div class="container process-container">
+        <header class="process-header">
+          <p class="process-eyebrow">How we work</p>
+          <h2 class="process-heading" id="process-heading">A considered process, from first visit to lasting maintenance.</h2>
+        </header>
+
+        <ol class="process-timeline">
+          <li class="process-step">
+            <span class="process-step-number" aria-hidden="true">01</span>
+            <span class="process-step-marker" aria-hidden="true"></span>
+            <h3 class="process-step-title">Consultation</h3>
+            <p class="process-step-description">Understand your property, lifestyle and requirements.</p>
+          </li>
+          <li class="process-step">
+            <span class="process-step-number" aria-hidden="true">02</span>
+            <span class="process-step-marker" aria-hidden="true"></span>
+            <h3 class="process-step-title">Site Assessment</h3>
+            <p class="process-step-description">Study space, sunlight, soil, drainage and existing landscape.</p>
+          </li>
+          <li class="process-step">
+            <span class="process-step-number" aria-hidden="true">03</span>
+            <span class="process-step-marker" aria-hidden="true"></span>
+            <h3 class="process-step-title">Concept Design</h3>
+            <p class="process-step-description">Develop the landscape concept and visual direction.</p>
+          </li>
+          <li class="process-step">
+            <span class="process-step-number" aria-hidden="true">04</span>
+            <span class="process-step-marker" aria-hidden="true"></span>
+            <h3 class="process-step-title">Detailed Design</h3>
+            <p class="process-step-description">Plants, materials, hardscape and outdoor elements.</p>
+          </li>
+          <li class="process-step">
+            <span class="process-step-number" aria-hidden="true">05</span>
+            <span class="process-step-marker" aria-hidden="true"></span>
+            <h3 class="process-step-title">Execution</h3>
+            <p class="process-step-description">Professional implementation and coordination on site.</p>
+          </li>
+          <li class="process-step">
+            <span class="process-step-number" aria-hidden="true">06</span>
+            <span class="process-step-marker" aria-hidden="true"></span>
+            <h3 class="process-step-title">Maintenance</h3>
+            <p class="process-step-description">Ongoing care to keep the landscape healthy and beautiful.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery-section" aria-labelledby="gallery-heading">
+      <div class="container">
+        <header class="gallery-header">
+          <div>
+            <p class="gallery-eyebrow">Gallery</p>
+            <h2 class="gallery-heading" id="gallery-heading">A closer look at our work.</h2>
+          </div>
+          <a class="gallery-project-link" href="#projects">Selected projects</a>
+        </header>
+
+        <div class="gallery-grid">
+          <button class="gallery-item" type="button" data-caption="Hero Villa Garden" aria-label="Open gallery image: Hero Villa Garden">
+            <picture><source type="image/avif" srcset="/images/hero-villa-garden-640.avif 640w, /images/hero-villa-garden-1024.avif 1024w, /images/hero-villa-garden-1600.avif 1200w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" /><img src="/images/hero-villa-garden-1024.webp" srcset="/images/hero-villa-garden-640.webp 640w, /images/hero-villa-garden-1024.webp 1024w, /images/hero-villa-garden-1600.webp 1200w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" alt="Tropical villa garden with palms, flowering plants, a stone path, swimming pool and thatched pavilion" width="1200" height="670" loading="lazy" decoding="async" /></picture>
+            <span class="gallery-caption">Hero Villa Garden</span>
+          </button>
+          <button class="gallery-item gallery-item--feature" type="button" data-caption="Entrance Planting" aria-label="Open gallery image: Entrance Planting">
+            <picture><source type="image/avif" srcset="/images/entrance-planting-640.avif 640w, /images/entrance-planting-1024.avif 1024w, /images/entrance-planting-1600.avif 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" /><img src="/images/entrance-planting-1024.webp" srcset="/images/entrance-planting-640.webp 640w, /images/entrance-planting-1024.webp 1024w, /images/entrance-planting-1600.webp 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" alt="Home entrance with timber gate, stone steps, paved approach and tropical planting" width="1536" height="1024" loading="lazy" decoding="async" /></picture>
+            <span class="gallery-caption">Entrance Planting</span>
+          </button>
+          <button class="gallery-item" type="button" data-caption="Stone Pathway" aria-label="Open gallery image: Stone Pathway">
+            <picture><source type="image/avif" srcset="/images/stone-pathway-640.avif 640w, /images/stone-pathway-1024.avif 1024w, /images/stone-pathway-1600.avif 1448w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" /><img src="/images/stone-pathway-1024.webp" srcset="/images/stone-pathway-640.webp 640w, /images/stone-pathway-1024.webp 1024w, /images/stone-pathway-1600.webp 1448w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" alt="Stepping-stone garden path winding through lush planting, rocks, and low garden lights" width="1448" height="1086" loading="lazy" decoding="async" /></picture>
+            <span class="gallery-caption">Stone Pathway</span>
+          </button>
+          <button class="gallery-item" type="button" data-caption="Vertical Green Wall" aria-label="Open gallery image: Vertical Green Wall">
+            <picture><source type="image/avif" srcset="/images/vertical-green-wall-640.avif 640w, /images/vertical-green-wall-1024.avif 1024w, /images/vertical-green-wall-1600.avif 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" /><img src="/images/vertical-green-wall-1024.webp" srcset="/images/vertical-green-wall-640.webp 640w, /images/vertical-green-wall-1024.webp 1024w, /images/vertical-green-wall-1600.webp 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" alt="Vertical garden wall covered with layered foliage beside a modern timber and stone terrace" width="1536" height="1024" loading="lazy" decoding="async" /></picture>
+            <span class="gallery-caption">Vertical Green Wall</span>
+          </button>
+          <button class="gallery-item" type="button" data-caption="Lawn &amp; Seating" aria-label="Open gallery image: Lawn and Seating">
+            <picture><source type="image/avif" srcset="/images/lawn-seating-640.avif 640w, /images/lawn-seating-1024.avif 1024w, /images/lawn-seating-1600.avif 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" /><img src="/images/lawn-seating-1024.webp" srcset="/images/lawn-seating-640.webp 640w, /images/lawn-seating-1024.webp 1024w, /images/lawn-seating-1600.webp 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" alt="Garden lawn with a stone path, built-in bench seating, lush planting and warm landscape lighting." width="1600" height="900" loading="lazy" decoding="async" /></picture>
+            <span class="gallery-caption">Lawn &amp; Seating</span>
+          </button>
+          <button class="gallery-item gallery-item--feature" type="button" data-caption="Evening Lighting" aria-label="Open gallery image: Evening Lighting">
+            <picture><source type="image/avif" srcset="/images/hero-evening-living-640.avif 640w, /images/hero-evening-living-1024.avif 1024w, /images/hero-evening-living-1600.avif 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" /><img src="/images/hero-evening-living-1024.webp" srcset="/images/hero-evening-living-640.webp 640w, /images/hero-evening-living-1024.webp 1024w, /images/hero-evening-living-1600.webp 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" alt="Landscaped garden at dusk with warm lights among mature trees, layered planting, an outdoor lounge and stone paths" width="1672" height="941" loading="lazy" decoding="async" /></picture>
+            <span class="gallery-caption">Evening Lighting</span>
+          </button>
+          <button class="gallery-item" type="button" data-caption="Native Planting Detail" aria-label="Open gallery image: Native Planting Detail">
+            <picture><source type="image/avif" srcset="/images/native-planting-detail-640.avif 640w, /images/native-planting-detail-1024.avif 1024w, /images/native-planting-detail-1600.avif 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" /><img src="/images/native-planting-detail-1024.webp" srcset="/images/native-planting-detail-640.webp 640w, /images/native-planting-detail-1024.webp 1024w, /images/native-planting-detail-1600.webp 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" alt="Layered garden planting with ornamental grasses, flowering groundcover, and leafy foliage" width="1536" height="1024" loading="lazy" decoding="async" /></picture>
+            <span class="gallery-caption">Native Planting Detail</span>
+          </button>
+          <button class="gallery-item" type="button" data-caption="Pergola &amp; Outdoor Structures" aria-label="Open gallery image: Pergola and Outdoor Structures">
+            <picture><source type="image/avif" srcset="/images/pergola-outdoor-640.avif 640w, /images/pergola-outdoor-1024.avif 1024w, /images/pergola-outdoor-1600.avif 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" /><img src="/images/pergola-outdoor-1024.webp" srcset="/images/pergola-outdoor-640.webp 640w, /images/pergola-outdoor-1024.webp 1024w, /images/pergola-outdoor-1600.webp 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" alt="Timber pergola with outdoor lounge seating, layered planting and warm garden lighting" width="1536" height="1024" loading="lazy" decoding="async" /></picture>
+            <span class="gallery-caption">Pergola &amp; Outdoor Structures</span>
+          </button>
+          <button class="gallery-item" type="button" data-caption="Terrace Garden" aria-label="Open gallery image: Terrace Garden">
+            <picture><source type="image/avif" srcset="/images/gallery-terrace-garden-640.avif 640w, /images/gallery-terrace-garden-1024.avif 1024w, /images/gallery-terrace-garden-1600.avif 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" /><img src="/images/gallery-terrace-garden-1024.webp" srcset="/images/gallery-terrace-garden-640.webp 640w, /images/gallery-terrace-garden-1024.webp 1024w, /images/gallery-terrace-garden-1600.webp 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" alt="Rooftop terrace garden with timber deck, pergola, lounge seating and city skyline" width="1536" height="1024" loading="lazy" decoding="async" /></picture>
+            <span class="gallery-caption">Terrace Garden</span>
+          </button>
+          <button class="gallery-item" type="button" data-caption="Villa Landscaping" aria-label="Open gallery image: Villa Landscaping">
+            <picture><source type="image/avif" srcset="/images/gallery-villa-640.avif 640w, /images/gallery-villa-1024.avif 1024w, /images/gallery-villa-1600.avif 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" /><img src="/images/gallery-villa-1024.webp" srcset="/images/gallery-villa-640.webp 640w, /images/gallery-villa-1024.webp 1024w, /images/gallery-villa-1600.webp 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" alt="Villa garden with a broad lawn, stone pathway, mature trees and layered planting" width="1536" height="1024" loading="lazy" decoding="async" /></picture>
+            <span class="gallery-caption">Villa Landscaping</span>
+          </button>
+          <button class="gallery-item" type="button" data-caption="Commercial Landscaping" aria-label="Open gallery image: Commercial Landscaping">
+            <picture><source type="image/avif" srcset="/images/gallery-commercial-640.avif 640w, /images/gallery-commercial-1024.avif 1024w, /images/gallery-commercial-1600.avif 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" /><img src="/images/gallery-commercial-1024.webp" srcset="/images/gallery-commercial-640.webp 640w, /images/gallery-commercial-1024.webp 1024w, /images/gallery-commercial-1600.webp 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" alt="Office building beside a landscaped walkway with mature trees, lawns and planted borders" width="1536" height="1024" loading="lazy" decoding="async" /></picture>
+            <span class="gallery-caption">Commercial Landscaping</span>
+          </button>
+          <button class="gallery-item gallery-item--feature" type="button" data-caption="Pergola Structure" aria-label="Open gallery image: Pergola Structure">
+            <picture><source type="image/avif" srcset="/images/gallery-pergola-640.avif 640w, /images/gallery-pergola-1024.avif 1024w, /images/gallery-pergola-1600.avif 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" /><img src="/images/gallery-pergola-1024.webp" srcset="/images/gallery-pergola-640.webp 640w, /images/gallery-pergola-1024.webp 1024w, /images/gallery-pergola-1600.webp 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" alt="Timber pergola sheltering a lounge deck and outdoor seating among garden planting" width="1536" height="1024" loading="lazy" decoding="async" /></picture>
+            <span class="gallery-caption">Pergola Structure</span>
+          </button>
+          <button class="gallery-item" type="button" data-caption="Outdoor Living" aria-label="Open gallery image: Outdoor Living">
+            <picture><source type="image/avif" srcset="/images/gallery-outdoor-living-640.avif 640w, /images/gallery-outdoor-living-1024.avif 1024w, /images/gallery-outdoor-living-1600.avif 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" /><img src="/images/gallery-outdoor-living-1024.webp" srcset="/images/gallery-outdoor-living-640.webp 640w, /images/gallery-outdoor-living-1024.webp 1024w, /images/gallery-outdoor-living-1600.webp 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" alt="Outdoor seating beneath a timber pergola beside a stone path and planted borders" width="1363" height="1154" loading="lazy" decoding="async" /></picture>
+            <span class="gallery-caption">Outdoor Living</span>
+          </button>
+          <button class="gallery-item" type="button" data-caption="Sustainable Planting" aria-label="Open gallery image: Sustainable Planting">
+            <picture><source type="image/avif" srcset="/images/sustainable-planting-640.avif 640w, /images/sustainable-planting-1024.avif 1024w, /images/sustainable-planting-1600.avif 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" /><img src="/images/sustainable-planting-1024.webp" srcset="/images/sustainable-planting-640.webp 640w, /images/sustainable-planting-1024.webp 1024w, /images/sustainable-planting-1600.webp 1600w" sizes="(max-width: 44rem) calc(100vw - 2.5rem), (max-width: 64rem) calc(50vw - 2rem), (max-width: 80rem) 30vw, 24rem" alt="Garden walkway bordered by layered planting and small trees" width="1536" height="1024" loading="lazy" decoding="async" /></picture>
+            <span class="gallery-caption">Sustainable Planting</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <dialog class="gallery-lightbox" id="gallery-lightbox" aria-labelledby="gallery-lightbox-caption">
+      <form method="dialog" class="gallery-lightbox-controls">
+        <button class="gallery-lightbox-close" type="submit" aria-label="Close gallery image"><span aria-hidden="true">×</span></button>
+      </form>
+      <figure class="gallery-lightbox-figure">
+        <picture><source type="image/avif" /><img class="gallery-lightbox-image" alt="" /></picture>
+        <figcaption class="gallery-lightbox-caption" id="gallery-lightbox-caption"></figcaption>
+      </figure>
+    </dialog>
+
+    <section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <header class="testimonials-header">
+          <div>
+            <p class="testimonials-eyebrow">Testimonials</p>
+            <h2 class="testimonials-heading" id="testimonials-heading">Words from our clients.</h2>
+          </div>
+          <div class="testimonials-controls" role="group" aria-label="Testimonial carousel controls">
+            <button class="testimonials-control" type="button" data-testimonial-prev aria-label="Previous testimonial" aria-controls="testimonials-track">&#8592;</button>
+            <button class="testimonials-control" type="button" data-testimonial-next aria-label="Next testimonial" aria-controls="testimonials-track">&#8594;</button>
+          </div>
+        </header>
+        <div class="testimonials-track" id="testimonials-track" role="region" aria-roledescription="carousel" aria-label="Client testimonials" tabindex="0">
+          <blockquote class="testimonial" role="group" aria-roledescription="slide" aria-label="1 of 3">
+            <p class="testimonial-quote">Green Vista turned our unused terrace into the most loved part of the house. The planting feels lush, but the layout is still easy to maintain.</p>
+              <footer class="testimonial-attribution"><cite>Aarav Mehta</cite><span>Terrace Garden - Indiranagar</span></footer>
+          </blockquote>
+          <blockquote class="testimonial" role="group" aria-roledescription="slide" aria-label="2 of 3">
+            <p class="testimonial-quote">The team understood the site instantly and made the entrance look premium without overcomplicating it. The lighting at night is excellent.</p>
+              <footer class="testimonial-attribution"><cite>Nisha Reddy</cite><span>Villa Landscaping - Whitefield</span></footer>
+          </blockquote>
+          <blockquote class="testimonial" role="group" aria-roledescription="slide" aria-label="3 of 3">
+            <p class="testimonial-quote">We wanted something modern, green and practical for our office campus. The result feels polished, calm and very professional.</p>
+              <footer class="testimonial-attribution"><cite>Rohan Kapoor</cite><span>Commercial Landscape - Outer Ring Road</span></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+      <div class="container contact-layout">
+        <div class="contact-copy">
+          <p class="contact-eyebrow">Get in touch</p>
+          <h2 class="contact-heading" id="contact-heading">Tell us about your project.</h2>
+          <p class="contact-intro">Tell us about your space. We'll be in touch to discuss your project.</p>
+        </div>
+
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xvkzdyya" method="POST">
+          <div class="contact-fields">
+            <div class="contact-field">
+              <label for="contact-name">Full name <span aria-hidden="true">*</span></label>
+              <input id="contact-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="contact-field">
+              <label for="contact-email">Email address <span aria-hidden="true">*</span></label>
+              <input id="contact-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="contact-field">
+              <label for="contact-phone">Phone number</label>
+              <input id="contact-phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+            <div class="contact-field">
+              <label for="contact-property">Property type</label>
+              <select id="contact-property" name="property_type">
+                <option value="">Select property type</option>
+                <option>Apartment</option>
+                <option>Villa / Independent House</option>
+                <option>Terrace / Rooftop</option>
+                <option>Office / Commercial</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="contact-field">
+              <label for="contact-location">Project location</label>
+              <input id="contact-location" name="project_location" type="text" autocomplete="address-level2" placeholder="Area in Bangalore" />
+            </div>
+            <div class="contact-field">
+              <label for="contact-service">Service required</label>
+              <select id="contact-service" name="service_required">
+                <option value="">Select a service</option>
+                <option>Terrace Garden</option>
+                <option>Villa Landscaping</option>
+                <option>Vertical Garden</option>
+                <option>Commercial Landscaping</option>
+                <option>Pergola &amp; Structures</option>
+              </select>
+            </div>
+            <div class="contact-field contact-field--wide">
+              <label for="contact-description">Project description</label>
+              <textarea id="contact-description" name="project_description" rows="5"></textarea>
+            </div>
+          </div>
+          <div class="contact-form-actions">
+            <button class="contact-submit" type="submit">Request Consultation</button>
+            <p class="contact-form-status" id="contact-form-status" role="status" aria-live="polite" tabindex="-1"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+  <!-- /MAIN CONTENT -->
+
+  <!-- =====================================================================
+       FOOTER SHELL — full content added in Phase 8
+       ===================================================================== -->
+  <footer class="site-footer" id="footer" role="contentinfo">
+    <div class="footer-inner container">
+
+      <div class="footer-main">
+        <section class="footer-brand" aria-labelledby="footer-brand-heading">
+          <h2 class="footer-logo-text" id="footer-brand-heading">Green Vista</h2>
+          <p class="footer-tagline">Farming Luxury, Crafting Landscapes</p>
+          <p class="footer-description">A landscape design studio crafting outdoor spaces across Bangalore, from villa gardens to commercial landscapes.</p>
+        </section>
+
+        <nav class="footer-explore" aria-labelledby="footer-explore-heading">
+          <h2 class="footer-heading" id="footer-explore-heading">Explore</h2>
+          <ul class="footer-link-list">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <section class="footer-contact" aria-labelledby="footer-contact-heading">
+          <h2 class="footer-heading" id="footer-contact-heading">Get in touch</h2>
+          <address class="footer-contact-list">
+            <p>Bangalore, India</p>
+            <p><a href="mailto:punithgsp@gmail.com">punithgsp@gmail.com</a></p>
+            <p><a href="#contact">Tell us about your project</a></p>
+          </address>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="copyright-year">2026</span> Green Vista Landscape Studio, Bangalore.</p>
+      </div>
+
+    </div>
+  </footer>
+  <!-- /FOOTER -->
+
+  <a class="call-float" href="tel:+918277788033" aria-label="Call Green Vista">
+    <svg class="call-float-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <path d="M6.6 3.8h2.7l1.3 4.1-1.8 1.8a14.2 14.2 0 0 0 5.5 5.5l1.8-1.8 4.1 1.3v2.7a2 2 0 0 1-2.2 2A16.7 16.7 0 0 1 4.6 5.9a2 2 0 0 1 2-2.1Z" />
+    </svg>
+  </a>
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/918277788033?text=Hello%20Green%20Vista%2C%20I%27m%20interested%20in%20your%20landscape%20design%20services%20in%20Bangalore.%20I%27d%20like%20to%20discuss%20a%20project."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact Green Vista on WhatsApp"
+  >
+    <svg class="whatsapp-float-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+      <path d="M16.02 3.2A12.7 12.7 0 0 0 5.08 22.34L3.3 28.8l6.62-1.74A12.7 12.7 0 1 0 16.02 3.2Zm0 23.1a10.35 10.35 0 0 1-5.28-1.45l-.38-.23-3.93 1.03 1.05-3.82-.25-.4a10.38 10.38 0 1 1 8.79 4.87Zm5.7-7.77c-.31-.16-1.84-.91-2.12-1.02-.28-.1-.49-.16-.7.16-.2.31-.8 1.02-.98 1.23-.18.2-.36.23-.67.08-.31-.16-1.31-.48-2.5-1.53-.92-.82-1.54-1.84-1.72-2.15-.18-.31-.02-.48.14-.64.14-.14.31-.36.46-.54.15-.18.2-.31.31-.51.1-.2.05-.39-.03-.54-.08-.16-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.53h-.6c-.2 0-.54.08-.82.39-.28.31-1.08 1.05-1.08 2.56s1.1 2.97 1.25 3.18c.15.2 2.17 3.32 5.26 4.65.74.32 1.31.51 1.76.65.74.23 1.41.2 1.94.12.59-.09 1.84-.75 2.1-1.48.26-.74.26-1.36.18-1.49-.08-.13-.28-.2-.59-.36Z" fill="currentColor"/>
+    </svg>
+  </a>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

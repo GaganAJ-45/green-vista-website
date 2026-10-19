@@ -1,0 +1,515 @@
+/* =============================================================================
+   Hero Section — Green Vista (Phase 1)
+   Three-photograph crossfade, dark contrast overlays, editorial typography,
+   call-to-actions, service highlights, accessible slide indicators and pause control.
+   ============================================================================= */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  color: var(--off);
+  background-color: var(--forest-deep);
+  overflow: hidden;
+  padding-top: calc(4.5rem + var(--space-8)); /* Clear the fixed header */
+  padding-bottom: var(--space-12);
+}
+
+/* ---------------------------------------------------------------------------
+   Background Slideshow Layers
+   --------------------------------------------------------------------------- */
+
+.hero-slides-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-base);
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 1.2s ease-in-out,
+    visibility 1.2s ease-in-out;
+  will-change: opacity;
+  pointer-events: none;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.hero-slide-picture,
+.hero-slide-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-slide-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Override the global intrinsic-ratio rule for the full-bleed slide images. */
+.hero-slide-img[width][height] { height: 100%; }
+
+/* Individual cropping and positioning per photograph composition */
+.hero-slide[data-slide="0"] .hero-slide-img {
+  object-position: center center;
+}
+
+.hero-slide[data-slide="1"] .hero-slide-img {
+  object-position: center 40%;
+}
+
+.hero-slide[data-slide="2"] .hero-slide-img {
+  object-position: center center;
+}
+
+/* ---------------------------------------------------------------------------
+   Restrained Contrast Gradient Overlay
+   Keeps text easily readable on all photos without washing out the gardens.
+   --------------------------------------------------------------------------- */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(
+      to right,
+      rgba(14, 23, 18, 0.88) 0%,
+      rgba(14, 23, 18, 0.65) 45%,
+      rgba(20, 32, 43, 0.35) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(14, 23, 18, 0.5) 0%,
+      rgba(14, 23, 18, 0.1) 40%,
+      rgba(14, 23, 18, 0.8) 100%
+    );
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Hero Foreground Layout
+   --------------------------------------------------------------------------- */
+
+.hero-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100svh - 4.5rem - var(--space-8) - var(--space-12));
+}
+
+.hero-main {
+  max-width: 44rem; /* Balanced width allowing natural line composition */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Editorial pill label */
+.hero-eyebrow {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  margin-bottom: var(--space-4);
+  background-color: rgba(24, 40, 31, 0.65);
+  border: 1px solid rgba(201, 167, 106, 0.25);
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+}
+
+/* Headline stack: overlays all 3 headlines in the exact same spot without layout shift */
+.hero-headline-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  margin-bottom: var(--space-4);
+}
+
+/* Headline — refined editorial proportions & synchronous 1.2s opacity transition */
+.hero-headline {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  font-family: var(--font-serif);
+  font-size: clamp(2.375rem, 5.2vw, 4.25rem); /* 38px on mobile → 68px on desktop */
+  font-weight: 500;
+  line-height: 1.12;
+  color: var(--off);
+  letter-spacing: -0.015em;
+  max-width: 24ch;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 1.2s ease-in-out,
+    visibility 1.2s ease-in-out;
+  will-change: opacity;
+  pointer-events: none;
+}
+
+.hero-headline.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Supporting Paragraph */
+.hero-description {
+  font-family: var(--font-sans);
+  font-size: clamp(1.0625rem, 1.4vw, 1.25rem); /* 17px → 20px */
+  line-height: var(--leading-normal);
+  color: var(--sand-lt);
+  max-width: 34rem;
+  margin-bottom: var(--space-6);
+  opacity: 0.95;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Action Buttons */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.hero-btn-primary {
+  background-color: var(--gold-lt);
+  color: var(--forest-deep);
+  border: 1px solid var(--gold-lt);
+  font-weight: 500;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.hero-btn-primary:hover,
+.hero-btn-primary:focus-visible {
+  background-color: var(--sand);
+  border-color: var(--sand);
+  color: var(--forest-deep);
+}
+
+.hero-btn-secondary {
+  background-color: rgba(246, 241, 231, 0.08);
+  color: var(--off);
+  border: 1px solid rgba(246, 241, 231, 0.45);
+  backdrop-filter: blur(4px);
+}
+
+.hero-btn-secondary:hover,
+.hero-btn-secondary:focus-visible {
+  background-color: rgba(246, 241, 231, 0.18);
+  border-color: var(--off);
+  color: var(--off);
+}
+
+/* Supporting Brand Statement */
+.hero-statement {
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  color: var(--gold-lt);
+  letter-spacing: var(--tracking-wide);
+  opacity: 0.85;
+  margin-bottom: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Lower Zone: Service Highlights & Slideshow Controls
+   --------------------------------------------------------------------------- */
+
+.hero-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: auto;
+}
+
+/* Service Highlights List */
+.hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-8);
+}
+
+.hero-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  color: var(--sand);
+  letter-spacing: var(--tracking-wide);
+}
+
+.hero-highlight-dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: var(--gold-lt);
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.hero-controls-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-left: auto;
+}
+
+/* ---------------------------------------------------------------------------
+   Slideshow Controls: Indicators & Pause Button
+   --------------------------------------------------------------------------- */
+
+.hero-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  background-color: rgba(14, 23, 18, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(6px);
+}
+
+.hero-indicators {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.hero-indicator-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 1.5rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-indicator-pill {
+  display: block;
+  width: 1.5rem;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  transition:
+    background-color var(--transition-base),
+    width var(--transition-base);
+}
+
+.hero-indicator-btn:hover .hero-indicator-pill,
+.hero-indicator-btn:focus-visible .hero-indicator-pill {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-indicator-btn.is-active .hero-indicator-pill {
+  background-color: var(--gold-lt);
+  width: 2.25rem;
+}
+
+/* Pause / Resume Control */
+.hero-pause-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--off);
+  opacity: 0.7;
+  border-radius: 50%;
+  transition:
+    opacity var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.hero-pause-btn:hover,
+.hero-pause-btn:focus-visible {
+  opacity: 1;
+  color: var(--gold-lt);
+}
+
+.hero-pause-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* Caption note */
+.hero-caption {
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  color: var(--sand);
+  opacity: 0.6;
+  font-style: italic;
+  margin-top: var(--space-2);
+}
+
+/* ---------------------------------------------------------------------------
+   Mobile Adjustments (< 768px)
+   --------------------------------------------------------------------------- */
+
+@media (max-width: 48rem) {
+  .hero-section {
+    min-height: 100svh;
+    padding-top: calc(4.5rem + var(--space-4));
+    padding-bottom: var(--space-6);
+  }
+
+  .hero-content {
+    min-height: 0;
+    justify-content: center;
+    gap: var(--space-8);
+  }
+
+  .hero-eyebrow { margin-bottom: var(--space-3); }
+
+  .hero-headline-stack { margin-bottom: var(--space-3); }
+
+  .hero-headline {
+    max-width: 16ch;
+    font-size: clamp(2.125rem, 9vw, 2.75rem);
+    line-height: 1.08;
+  }
+
+  .hero-description {
+    max-width: 34ch;
+    margin-bottom: var(--space-4);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .hero-slide[data-slide="0"] .hero-slide-img {
+    object-position: 65% center;
+  }
+
+  .hero-slide[data-slide="1"] .hero-slide-img {
+    object-position: 70% center;
+  }
+
+  .hero-slide[data-slide="2"] .hero-slide-img {
+    object-position: 60% center;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(14, 23, 18, 0.32) 0%,
+        rgba(14, 23, 18, 0.45) 32%,
+        rgba(14, 23, 18, 0.62) 68%,
+        rgba(14, 23, 18, 0.78) 100%
+      );
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    align-items: stretch;
+    gap: var(--space-3);
+    margin-bottom: 0;
+  }
+
+  .hero-actions .btn {
+    display: inline-flex;
+    width: auto;
+    min-width: 0;
+    min-height: 3rem;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.75rem 0.625rem;
+    font-size: var(--text-small);
+    line-height: 1.25;
+  }
+
+  .hero-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding-top: var(--space-4);
+  }
+
+  .hero-highlights {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0.5rem;
+    row-gap: 0.75rem;
+  }
+
+  .hero-controls-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+    margin-left: 0;
+    max-width: calc(100% - 4.5rem);
+  }
+
+  .hero-highlight-item { min-width: 0; align-items: flex-start; gap: 6px; font-size: var(--text-label); line-height: 1.35; }
+  .hero-caption { margin-top: 0; }
+  .hero-highlight-dot { flex: 0 0 4px; margin-top: 0.45em; }
+}
+
+@media (max-width: 22.5rem) {
+  .hero-content { gap: var(--space-6); }
+  .hero-headline { font-size: clamp(2rem, 10vw, 2.125rem); }
+  .hero-actions { gap: var(--space-2); }
+  .hero-actions .btn { padding-inline: 0.4rem; font-size: 0.75rem; }
+  .hero-highlights { column-gap: 0.5rem; row-gap: 0.625rem; }
+  .hero-highlight-item { font-size: 0.75rem; letter-spacing: 0.02em; }
+  .hero-controls-wrap { max-width: calc(100% - 3.75rem); }
+}
+
+/* ---------------------------------------------------------------------------
+   Reduced Motion
+   Disable automatic crossfades, freeze on first slide, no transitions.
+   --------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide {
+    transition: none !important;
+  }
+
+  .hero-headline {
+    transition: none !important;
+  }
+
+  .hero-indicator-pill {
+    transition: none !important;
+  }
+}

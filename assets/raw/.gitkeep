@@ -1,0 +1,8 @@
+# This directory holds original, unprocessed photographs.
+# Files here are the input to scripts/optimize-images.mjs.
+# They are NEVER shipped to production — only /public/images/ is deployed.
+#
+# Drop files here using the names in IMAGE_MANIFEST.md, then run:
+#   npm run images
+#
+# No HTML or CSS changes are needed after adding a photograph.
